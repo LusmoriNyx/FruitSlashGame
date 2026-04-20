@@ -29,8 +29,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.68391067, y: 0, z: 0, w: 0.7295658}
   m_LocalPosition: {x: 2.76441, y: 0.144, z: 1.479}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3965573974130530854}
   - {fileID: 1434224658528156148}
@@ -97,8 +97,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.031128645, y: 0.6325654}
-  m_Radius: 0.055702478
+  m_Offset: {x: -0.01, y: -0.27}
+  m_Radius: 0.17
 --- !u!114 &7532974843237363176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1511effb17ac00d45b6aeac23602fbd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FruitBehaviour
-  fruitSliced: {fileID: 7708244323412467351, guid: c12bc3a9d22ec7046aed9031ce0bdf3e, type: 3}
+  fruitSliced: {fileID: 5913303811004476484, guid: 8dcac7875881e724ab8fc2e4df992463, type: 3}
   startForce: 13
 --- !u!1001 &5323294287094481020
 PrefabInstance:
