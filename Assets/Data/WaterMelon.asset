@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 503ced01c6c09494b88a5a5c8613c2b3, type: 3}
-  m_Name: Orange
+  m_Name: WaterMelon
   m_EditorClassIdentifier: Assembly-CSharp::Fruit
-  fruit: {fileID: 1926813137442665632, guid: 0e579ea23f6e9b149ab52c2758812a46, type: 3}
-  slicedFruit: {fileID: 8727493109956225519, guid: 34f27240a5c8c4f42a6f70563f1b9b29, type: 3}
-  type: 3
+  fruit: {fileID: 6814454937866901683, guid: 44a614f959c8ef349bb764a511d6e093, type: 3}
+  slicedFruit: {fileID: 4132044562465460396, guid: 1fd564fe036fdce458b68fd3d912bb79, type: 3}
+  type: 6
   spawnRate: 10

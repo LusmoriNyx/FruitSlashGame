@@ -4,5 +4,8 @@ public enum FruitsType
     Banana,
     Cherry,
     Orange,
-    Bomb
+    Bomb,
+    DragonFruit,
+    Watermelon,
+    Coconut,
 }
