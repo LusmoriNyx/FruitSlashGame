@@ -467,13 +467,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c69896292d2fba40a8e8adabd08054e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fruitPrefab: {fileID: 290692247212299034, guid: 15b4cf71236a91c4a818419d80cccc84, type: 3}
+  fruits:
+  - {fileID: 11400000, guid: 2ecffa4c0301d84438e70c243d491dee, type: 2}
   spawnPoints:
   - {fileID: 1126714750}
   - {fileID: 834579015}
   - {fileID: 1572693717}
-  minDelay: 0.1
-  maxDelay: 1
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -601,63 +600,6 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
---- !u!1001 &778871467
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 290692247212299034, guid: 15b4cf71236a91c4a818419d80cccc84, type: 3}
-      propertyPath: m_Name
-      value: dragon fruit
-      objectReference: {fileID: 0}
-    - target: {fileID: 8226234454419970089, guid: 15b4cf71236a91c4a818419d80cccc84, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2.53226
-      objectReference: {fileID: 0}
-    - target: {fileID: 8226234454419970089, guid: 15b4cf71236a91c4a818419d80cccc84, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8226234454419970089, guid: 15b4cf71236a91c4a818419d80cccc84, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1.8622
-      objectReference: {fileID: 0}
-    - target: {fileID: 8226234454419970089, guid: 15b4cf71236a91c4a818419d80cccc84, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7295658
-      objectReference: {fileID: 0}
-    - target: {fileID: 8226234454419970089, guid: 15b4cf71236a91c4a818419d80cccc84, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.68391067
-      objectReference: {fileID: 0}
-    - target: {fileID: 8226234454419970089, guid: 15b4cf71236a91c4a818419d80cccc84, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8226234454419970089, guid: 15b4cf71236a91c4a818419d80cccc84, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8226234454419970089, guid: 15b4cf71236a91c4a818419d80cccc84, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -86.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8226234454419970089, guid: 15b4cf71236a91c4a818419d80cccc84, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8226234454419970089, guid: 15b4cf71236a91c4a818419d80cccc84, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 15b4cf71236a91c4a818419d80cccc84, type: 3}
 --- !u!1 &830509230
 GameObject:
   m_ObjectHideFlags: 0
@@ -1067,4 +1009,3 @@ SceneRoots:
   - {fileID: 37155175}
   - {fileID: 830509233}
   - {fileID: 591810708}
-  - {fileID: 778871467}
