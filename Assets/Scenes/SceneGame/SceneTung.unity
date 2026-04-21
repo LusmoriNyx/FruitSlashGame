@@ -93,10 +93,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 34dafa7386973ea4aa60cd2b3881514f,
-    type: 2}
-  m_LightingSettings: {fileID: 4890085278179872738, guid: e651b87614058a647922de000efebb24,
-    type: 2}
+  m_LightingDataAsset: {fileID: 112000000, guid: 34dafa7386973ea4aa60cd2b3881514f, type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: e651b87614058a647922de000efebb24, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -167,8 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8a1a62c76c8b8749a62b58225b81ee4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bladeTrailPrefab: {fileID: 583861401850124260, guid: 13f515cb4c63648489d7e2b745ffd74e,
-    type: 3}
+  bladeTrailPrefab: {fileID: 583861401850124260, guid: 13f515cb4c63648489d7e2b745ffd74e, type: 3}
   minCuttingVelocity: 0.001
 --- !u!50 &19393541
 Rigidbody2D:
@@ -470,14 +467,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c69896292d2fba40a8e8adabd08054e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fruitPrefab: {fileID: 8385070623475546505, guid: de8ff4bc5a1c3c5488a2bc1c0e18dbef,
-    type: 3}
+  fruits: []
   spawnPoints:
   - {fileID: 1126714750}
   - {fileID: 834579015}
   - {fileID: 1572693717}
-  minDelay: 0.1
-  maxDelay: 1
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -488,6 +482,7 @@ GameObject:
   m_Component:
   - component: {fileID: 705507995}
   - component: {fileID: 705507994}
+  - component: {fileID: 705507996}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -575,6 +570,35 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &705507996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 705507993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalLightData
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_CustomShadowLayers: 0
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
+  m_RenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_ShadowRenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_Version: 4
+  m_LightLayerMask: 1
+  m_ShadowLayerMask: 1
+  m_RenderingLayers: 1
+  m_ShadowRenderingLayers: 1
 --- !u!1 &830509230
 GameObject:
   m_ObjectHideFlags: 0
@@ -974,6 +998,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 591810708}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -15.657001}
+--- !u!1 &1871979665
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1871979667}
+  - component: {fileID: 1871979666}
+  m_Layer: 0
+  m_Name: ObjectPoolManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1871979666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1871979665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a73df8a3c8c5494080a3ed66f7f9474, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ObjectPoolManager
+--- !u!4 &1871979667
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1871979665}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 130.19989, y: 0, z: -578.6009}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -984,3 +1052,4 @@ SceneRoots:
   - {fileID: 37155175}
   - {fileID: 830509233}
   - {fileID: 591810708}
+  - {fileID: 1871979667}
