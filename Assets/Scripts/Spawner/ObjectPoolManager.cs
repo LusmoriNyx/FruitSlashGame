@@ -33,6 +33,9 @@ public class ObjectPoolManager : MonoBehaviour
         }
         GameObject spawnedFruit = Instantiate(fruitQueue.FruitPrefab);
         GameObject spawnedSlicedFruit = Instantiate(fruitQueue.SlicedFruitPrefab);
+
+        spawnedFruit.GetComponent<FruitBehaviour>().fruit = fruitQueue;
+
         spawnedSlicedFruit.SetActive(false);
         spawnedFruit.SetActive(false);
         fruitsPoolObject[type].Enqueue(spawnedFruit);
