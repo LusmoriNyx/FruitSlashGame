@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FruitBehaviour
   fruit: {fileID: 0}
-  startForce: 0
+  startForce: 10
 --- !u!50 &3620291899059561946
 Rigidbody2D:
   serializedVersion: 5

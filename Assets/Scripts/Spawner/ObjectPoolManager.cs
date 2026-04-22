@@ -32,12 +32,13 @@ public class ObjectPoolManager : MonoBehaviour
             slicedFruitsPoolObject[type] = new Queue<GameObject>();
         }
         GameObject spawnedFruit = Instantiate(fruitQueue.FruitPrefab);
+        spawnedFruit.SetActive(false);
         GameObject spawnedSlicedFruit = Instantiate(fruitQueue.SlicedFruitPrefab);
+        spawnedSlicedFruit.SetActive(false);
 
         spawnedFruit.GetComponent<FruitBehaviour>().fruit = fruitQueue;
+        spawnedSlicedFruit.GetComponent<FruitSliceBehaviour>().sliceFruit = fruitQueue;
 
-        spawnedSlicedFruit.SetActive(false);
-        spawnedFruit.SetActive(false);
         fruitsPoolObject[type].Enqueue(spawnedFruit);
         slicedFruitsPoolObject[type].Enqueue(spawnedSlicedFruit);
     }
@@ -58,7 +59,7 @@ public class ObjectPoolManager : MonoBehaviour
             IniPool(slice.Type, slice);
         }
         GameObject obj = slicedFruitsPoolObject[slice.Type].Dequeue();
-        obj.SetActive(true);
+        //obj.SetActive(true);
         return obj;
     }
     public void ReturnObjectFruit(Fruit fruit, GameObject obj)

@@ -6,7 +6,11 @@ public class FruitSliceBehaviour : MonoBehaviour
 
     private void OnEnable()
     {
-        Invoke("ReturnSlicedFruit", 3f);
+        Debug.Log(sliceFruit);
+        if(sliceFruit != null )
+        {
+            Invoke("ReturnSlicedFruit", 3f);
+        }
     }
     private void ReturnSlicedFruit()
     {

@@ -168,5 +168,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1511effb17ac00d45b6aeac23602fbd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FruitBehaviour
-  fruit: {fileID: 11400000, guid: 2ecffa4c0301d84438e70c243d491dee, type: 2}
-  startForce: 0
+  fruit: {fileID: 0}
+  startForce: 10

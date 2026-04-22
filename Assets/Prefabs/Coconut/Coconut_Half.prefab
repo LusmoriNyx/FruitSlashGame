@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4059903554581670582}
   - component: {fileID: 4512704258882595326}
   - component: {fileID: 5860640237100832699}
+  - component: {fileID: -2374722799069513340}
   m_Layer: 0
   m_Name: Coconut_Half
   m_TagString: Untagged
@@ -118,3 +119,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-2374722799069513340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7858048252557263089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d1dc6b6ebb30d044a91fc6e31ef25b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FruitSliceBehaviour
+  sliceFruit: {fileID: 0}

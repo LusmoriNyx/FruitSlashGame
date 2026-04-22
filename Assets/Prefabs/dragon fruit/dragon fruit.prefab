@@ -111,8 +111,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1511effb17ac00d45b6aeac23602fbd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FruitBehaviour
-  fruit: {fileID: 11400000, guid: 06b719e48f939914daa1a804760d5fea, type: 2}
-  startForce: 13
+  fruit: {fileID: 0}
+  startForce: 10
 --- !u!1001 &5323294287094481020
 PrefabInstance:
   m_ObjectHideFlags: 0

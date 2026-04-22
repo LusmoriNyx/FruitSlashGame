@@ -15,6 +15,7 @@ public class FruitSpawner : MonoBehaviour
     void Start()
     {
         InitializedFunTionSpawnFruits();
+        StartSpawnFruits();
     }
     public void StartSpawnFruits()
     {
