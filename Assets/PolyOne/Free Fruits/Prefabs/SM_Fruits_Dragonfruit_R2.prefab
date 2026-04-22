@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6487224472046614920}
   - component: {fileID: 3160545867051105038}
   - component: {fileID: 3107806325920553189}
+  - component: {fileID: -623853558974060109}
   m_Layer: 0
   m_Name: SM_Fruits_Dragonfruit_R2
   m_TagString: Untagged
@@ -90,3 +91,17 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &-623853558974060109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3104026470109761112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1511effb17ac00d45b6aeac23602fbd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FruitBehaviour
+  fruit: {fileID: 0}
+  startForce: 0

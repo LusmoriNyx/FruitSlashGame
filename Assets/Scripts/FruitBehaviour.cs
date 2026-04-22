@@ -8,13 +8,14 @@ public class FruitBehaviour : MonoBehaviour
     private bool isSliced;
     Rigidbody2D rb;
     public float startForce;
-    void Start()
+    private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        rb.AddForce(transform.up * startForce, ForceMode2D.Impulse);
     }
     private void OnEnable()
     {
+        rb.AddForce(transform.up * startForce, ForceMode2D.Impulse);
+        Debug.Log(fruit);
         isSliced = false;
         Invoke("FruitsDroped", 5f);
     }
@@ -36,6 +37,7 @@ public class FruitBehaviour : MonoBehaviour
             {
                 slicedFruit = ObjectPoolManager.Instance.GetObjectSlicedFruit(fruit);
                 slicedFruit.GetComponent<FruitSliceBehaviour>().sliceFruit = fruit;
+                slicedFruit.SetActive(true);
                 ObjectPoolManager.Instance.ReturnObjectFruit(fruit, gameObject);
             }
             if (slicedFruit != null)
@@ -46,7 +48,7 @@ public class FruitBehaviour : MonoBehaviour
     }
     private void FruitsDroped()
     {
-        if(isSliced == false)
+        if(isSliced == false && fruit != null)
         {
             ObjectPoolManager.Instance.ReturnObjectFruit(fruit, gameObject);
         }
