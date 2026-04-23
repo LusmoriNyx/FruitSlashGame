@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: DragonFruit
   m_EditorClassIdentifier: Assembly-CSharp::Fruit
   fruit: {fileID: 290692247212299034, guid: 15b4cf71236a91c4a818419d80cccc84, type: 3}
-  slicedFruit: {fileID: 5913303811004476484, guid: 8dcac7875881e724ab8fc2e4df992463, type: 3}
+  slicedFruit: {fileID: 7708244323412467351, guid: 0ed708a725710b048b272b003def8348, type: 3}
   type: 5
   spawnRate: 10

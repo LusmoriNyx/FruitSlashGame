@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Avocado
   m_EditorClassIdentifier: Assembly-CSharp::Fruit
   fruit: {fileID: 917064483498967949, guid: 43c281244fc9db34a94f8f0c6c79deeb, type: 3}
-  slicedFruit: {fileID: 1069292519774077285, guid: dad7e97c963752044842223fdcbdd929, type: 3}
+  slicedFruit: {fileID: 7708244323412467351, guid: d5a0a34626068224ebc1c20e315b6cf6, type: 3}
   type: 0
   spawnRate: 10

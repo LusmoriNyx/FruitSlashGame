@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Orange
   m_EditorClassIdentifier: Assembly-CSharp::Fruit
   fruit: {fileID: 1926813137442665632, guid: 0e579ea23f6e9b149ab52c2758812a46, type: 3}
-  slicedFruit: {fileID: 8727493109956225519, guid: 34f27240a5c8c4f42a6f70563f1b9b29, type: 3}
+  slicedFruit: {fileID: 7708244323412467351, guid: cdf6d03362d3d62478b8c17ddc8296ea, type: 3}
   type: 3
   spawnRate: 10

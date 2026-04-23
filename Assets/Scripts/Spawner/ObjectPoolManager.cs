@@ -37,7 +37,7 @@ public class ObjectPoolManager : MonoBehaviour
         spawnedSlicedFruit.SetActive(false);
 
         spawnedFruit.GetComponent<FruitBehaviour>().fruit = fruitQueue;
-        spawnedSlicedFruit.GetComponent<FruitSliceBehaviour>().sliceFruit = fruitQueue;
+       // spawnedSlicedFruit.GetComponent<FruitSliceBehaviour>().sliceFruit = fruitQueue;
 
         fruitsPoolObject[type].Enqueue(spawnedFruit);
         slicedFruitsPoolObject[type].Enqueue(spawnedSlicedFruit);

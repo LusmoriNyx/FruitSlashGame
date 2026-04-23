@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: WaterMelon
   m_EditorClassIdentifier: Assembly-CSharp::Fruit
   fruit: {fileID: 6814454937866901683, guid: 44a614f959c8ef349bb764a511d6e093, type: 3}
-  slicedFruit: {fileID: 4132044562465460396, guid: 1fd564fe036fdce458b68fd3d912bb79, type: 3}
+  slicedFruit: {fileID: 7708244323412467351, guid: 8f8a033916ee4f748a411f7e96f4da6a, type: 3}
   type: 6
   spawnRate: 10

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Coconut
   m_EditorClassIdentifier: Assembly-CSharp::Fruit
   fruit: {fileID: 5214256899315752709, guid: 7d66f0ac84df005408bc9fc7e3655a67, type: 3}
-  slicedFruit: {fileID: 7858048252557263089, guid: 3a5c9ffe7a2465e4aabdfc06b968620e, type: 3}
+  slicedFruit: {fileID: 7708244323412467351, guid: fd57da09cf1622c48b684d8f971c8ff2, type: 3}
   type: 7
   spawnRate: 10

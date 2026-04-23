@@ -6,56 +6,76 @@ public class Blade : MonoBehaviour
 {
     public GameObject bladeTrailPrefab;
     GameObject currentBladeTrail;
-    bool isCutting = false;
-    Rigidbody2D rb;
-    Camera cam;
-    CircleCollider2D circle;
-    Vector2 previousPosition;
-    public float minCuttingVelocity = .001f;    
 
-    void Start(){
+    bool isCutting = false;
+
+    Rigidbody rb;
+    Camera cam;
+    SphereCollider sphere;
+
+    Vector3 previousPosition;
+
+    public float minCuttingVelocity = 0.1f;
+
+    void Start()
+    {
         cam = Camera.main;
-        rb = GetComponent<Rigidbody2D>();
-        circle = GetComponent<CircleCollider2D>();
+        rb = GetComponent<Rigidbody>();
+        sphere = GetComponent<SphereCollider>();
     }
+
     void Update()
     {
-        if(Input.GetMouseButtonDown(0)){
+        if (Input.GetMouseButtonDown(0))
+        {
             StartCutting();
-        }else if(Input.GetMouseButtonUp(0)){
+        }
+        else if (Input.GetMouseButtonUp(0))
+        {
             StopCutting();
-        }   
+        }
 
-        if(isCutting){
+        if (isCutting)
+        {
             UpdateCut();
-        }    
+        }
     }
 
-    void UpdateCut(){
-        Vector2 newPosition = cam.ScreenToWorldPoint(Input.mousePosition);
+    void UpdateCut()
+    {
+        Vector3 newPosition = cam.ScreenToWorldPoint(
+            new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10f)
+        );
+
         rb.position = newPosition;
-        float velocity = (newPosition - previousPosition).magnitude * Time.deltaTime;
-        if(velocity > minCuttingVelocity){
-            circle.enabled = true;
-        }else{
-            circle.enabled = false;
-        }
+
+        float velocity = (newPosition - previousPosition).magnitude / Time.deltaTime;
+
+        sphere.enabled = velocity > minCuttingVelocity;
+
         previousPosition = newPosition;
     }
 
-    void StartCutting(){
+    void StartCutting()
+    {
         isCutting = true;
-        currentBladeTrail = Instantiate(bladeTrailPrefab,transform);
-        previousPosition = cam.ScreenToWorldPoint(Input.mousePosition);
-        circle.enabled = false;
-        
+
+        currentBladeTrail = Instantiate(bladeTrailPrefab, transform);
+
+        previousPosition = cam.ScreenToWorldPoint(
+            new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10f)
+        );
+
+        sphere.enabled = false;
     }
 
-    void StopCutting(){
+    void StopCutting()
+    {
         isCutting = false;
+
         currentBladeTrail.transform.SetParent(null);
         Destroy(currentBladeTrail, 2f);
-        circle.enabled = false;
-    }
 
+        sphere.enabled = false;
+    }
 }
