@@ -107,6 +107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FruitBehaviour
   fruit: {fileID: 0}
   startForce: 10
+  sideForceScale: 1
 --- !u!135 &4085940294276130425
 SphereCollider:
   m_ObjectHideFlags: 0
