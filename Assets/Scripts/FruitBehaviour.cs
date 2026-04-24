@@ -20,11 +20,23 @@ public class FruitBehaviour : MonoBehaviour
         rb.linearVelocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
 
+        // Nếu spawnPoint quay lên trên, thì lực sẽ được áp dụng theo hướng lên trên
+     
         rb.AddForce(transform.up * startForce, ForceMode.Impulse);
+
 
         isSliced = false;
 
         Invoke(nameof(FruitsDropped), 5f);
+    }
+
+    public void LaunchWithDirection(Vector3 direction, float forceMultiplier = 1f)
+    {
+        rb.linearVelocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
+
+        Vector3 launchDirection = direction.sqrMagnitude > 0f ? direction.normalized : Vector3.up;
+        rb.AddForce(launchDirection * startForce * forceMultiplier, ForceMode.Impulse);
     }
 
     private void OnTriggerEnter(Collider col)
