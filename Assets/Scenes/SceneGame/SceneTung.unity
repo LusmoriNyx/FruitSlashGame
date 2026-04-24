@@ -294,6 +294,8 @@ MonoBehaviour:
   fruits:
   - {fileID: 11400000, guid: 7e678bcc1341e6d48a933ff459295afc, type: 2}
   - {fileID: 11400000, guid: 2230471bda7c7d64198d28a2a25cb546, type: 2}
+  - {fileID: 11400000, guid: 3b135e3d1ec43ff458b51563b8fe380d, type: 2}
+  - {fileID: 11400000, guid: 2ecffa4c0301d84438e70c243d491dee, type: 2}
   spawnPoints:
   - {fileID: 1126714750}
   - {fileID: 834579015}

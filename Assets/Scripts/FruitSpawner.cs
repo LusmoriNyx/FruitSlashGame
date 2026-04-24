@@ -8,7 +8,7 @@ public class FruitSpawner : MonoBehaviour
     [SerializeField] private List<Fruit> fruits = new List<Fruit>();
     [SerializeField] private Transform[] spawnPoints;
     private float minDelay = 0.1f;
-    private float maxDelay = 1f;
+    private float maxDelay = 2f;
     private float timer = 0f;
     private bool isIncSpeedSpawn = true;
 
@@ -32,8 +32,9 @@ public class FruitSpawner : MonoBehaviour
             timer += Time.deltaTime;
             if(timer >= 5f && isIncSpeedSpawn)
             {
-                minDelay += 0.1f;
-                maxDelay -= 0.1f;
+                Debug.Log("Spawn speed increased");
+                minDelay += 0.2f;
+                maxDelay -= 0.2f;
                 timer = 0f;
             }
             
