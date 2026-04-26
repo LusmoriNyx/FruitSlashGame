@@ -20,7 +20,7 @@ public class FruitSpawner : MonoBehaviour
     [SerializeField] private float sideUpwardBias = 1f;
     [SerializeField] private float sideForceMultiplier = 1f;
     private float minDelay = 0.1f;
-    private float maxDelay = 2f;
+    private float maxDelay = 3f;
     private float timer = 0f;
     private bool isIncSpeedSpawn = true;
 
@@ -28,6 +28,21 @@ public class FruitSpawner : MonoBehaviour
     {
         InitializedFunTionSpawnFruits();
         StartSpawnFruits();
+    }
+    void Update()
+    {
+        if (maxDelay - minDelay <= 0.01f)
+        {
+            isIncSpeedSpawn = false;
+        }
+        timer += Time.deltaTime;
+        if (timer >= 5f && isIncSpeedSpawn)
+        {
+            Debug.Log("Inc speed spawn");
+            minDelay += 0.2f;
+            maxDelay -= 0.2f;
+            timer = 0f;
+        }
     }
     public void StartSpawnFruits()
     {
@@ -37,19 +52,6 @@ public class FruitSpawner : MonoBehaviour
     {
         while (true)
         {
-            if (minDelay > maxDelay)
-            {
-                isIncSpeedSpawn = false;
-            }
-            timer += Time.deltaTime;
-            if (timer >= 5f && isIncSpeedSpawn)
-            {
-                Debug.Log("Spawn speed increased");
-                minDelay += 0.2f;
-                maxDelay -= 0.2f;
-                timer = 0f;
-            }
-
             float delay = Random.Range(minDelay, maxDelay);
             yield return new WaitForSeconds(delay);
             bool isSideSpawn;
