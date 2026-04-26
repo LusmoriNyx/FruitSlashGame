@@ -51,6 +51,11 @@ public class FruitBehaviour : MonoBehaviour
             if (fruit != null && fruit.Type == FruitsType.Bomb)
             {
                 ObjectPoolManager.Instance.ReturnObjectFruit(fruit, gameObject);
+                LifeManager lifeManager = FindObjectOfType<LifeManager>();
+                if (lifeManager != null)
+                {
+                    lifeManager.UpdateLives();
+                }
             }
             else
             {

@@ -29,18 +29,25 @@ public class ObjectPoolManager : MonoBehaviour
         if (!fruitsPoolObject.ContainsKey(type))
         {
             fruitsPoolObject[type] = new Queue<GameObject>();
+        }
+        if (!slicedFruitsPoolObject.ContainsKey(type) && type != FruitsType.Bomb)
+        {
             slicedFruitsPoolObject[type] = new Queue<GameObject>();
         }
         GameObject spawnedFruit = Instantiate(fruitQueue.FruitPrefab);
         spawnedFruit.SetActive(false);
-        GameObject spawnedSlicedFruit = Instantiate(fruitQueue.SlicedFruitPrefab);
-        spawnedSlicedFruit.SetActive(false);
 
         spawnedFruit.GetComponent<FruitBehaviour>().fruit = fruitQueue;
-       // spawnedSlicedFruit.GetComponent<FruitSliceBehaviour>().sliceFruit = fruitQueue;
+        //spawnedSlicedFruit.GetComponent<FruitSliceBehaviour>().sliceFruit = fruitQueue;
 
         fruitsPoolObject[type].Enqueue(spawnedFruit);
-        slicedFruitsPoolObject[type].Enqueue(spawnedSlicedFruit);
+        GameObject spawnedSlicedFruit;
+        if (type != FruitsType.Bomb)
+        {
+            spawnedSlicedFruit = Instantiate(fruitQueue.SlicedFruitPrefab);
+            slicedFruitsPoolObject[type].Enqueue(spawnedSlicedFruit);
+            spawnedSlicedFruit.SetActive(false);
+        }
     }
     public GameObject GetObjectFruit(Fruit fruit)
     {
