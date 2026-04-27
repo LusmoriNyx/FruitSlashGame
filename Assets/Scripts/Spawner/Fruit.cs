@@ -11,5 +11,8 @@ public class Fruit : ScriptableObject
     public FruitsType Type => type;
     [SerializeField] private float spawnRate;
     public float SpawnRate => spawnRate;
+    // Fruit.cs - thêm dòng
+    [SerializeField] private int pointValue = 10;
+    public int PointValue => pointValue;
 }
     

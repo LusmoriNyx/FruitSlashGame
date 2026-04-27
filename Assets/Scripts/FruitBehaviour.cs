@@ -52,7 +52,7 @@ public class FruitBehaviour : MonoBehaviour
             if (fruit != null && fruit.Type == FruitsType.Bomb)
             {
                 ObjectPoolManager.Instance.ReturnObjectFruit(fruit, gameObject);
-                LifeManager lifeManager = FindObjectOfType<LifeManager>();
+                LifeManager lifeManager = FindAnyObjectByType<LifeManager>();
                 if (lifeManager != null)
                 {
                     lifeManager.UpdateLives();
@@ -65,6 +65,9 @@ public class FruitBehaviour : MonoBehaviour
             }
             else
             {
+                if (LifeManager.Instance != null)
+                    LifeManager.Instance.AddScore(fruit.PointValue);
+
                 slicedFruit = ObjectPoolManager.Instance.GetObjectSlicedFruit(fruit);
 
                 slicedFruit.transform.position = transform.position;
@@ -95,4 +98,5 @@ public class FruitBehaviour : MonoBehaviour
             ObjectPoolManager.Instance.ReturnObjectSlicedFruit(fruit, obj);
         }
     }
+   
 }

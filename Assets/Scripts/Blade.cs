@@ -26,6 +26,9 @@ public class Blade : MonoBehaviour
 
     void Update()
     {
+        // Chỉ cho phép cắt khi game đã bắt đầu
+        if (!GameManager.Instance.isGameStarted) return;
+
         if (Input.GetMouseButtonDown(0))
         {
             StartCutting();

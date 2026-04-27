@@ -51,7 +51,8 @@ public class ObjectPoolManager : MonoBehaviour
     }
     public GameObject GetObjectFruit(Fruit fruit)
     {
-        if(!fruitsPoolObject.ContainsKey(fruit.Type) || fruitsPoolObject[fruit.Type].Count == 0)
+        if (!GameManager.Instance.isGameStarted) return null;
+        if (!fruitsPoolObject.ContainsKey(fruit.Type) || fruitsPoolObject[fruit.Type].Count == 0)
         {
             IniPool(fruit.Type, fruit);
         }
@@ -61,7 +62,8 @@ public class ObjectPoolManager : MonoBehaviour
     }
     public GameObject GetObjectSlicedFruit(Fruit slice)
     {
-        if(!slicedFruitsPoolObject.ContainsKey(slice.Type) || slicedFruitsPoolObject[slice.Type].Count == 0)
+        if (!GameManager.Instance.isGameStarted) return null;
+        if (!slicedFruitsPoolObject.ContainsKey(slice.Type) || slicedFruitsPoolObject[slice.Type].Count == 0)
         {
             IniPool(slice.Type, slice);
         }

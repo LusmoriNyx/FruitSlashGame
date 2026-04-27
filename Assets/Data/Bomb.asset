@@ -15,4 +15,5 @@ MonoBehaviour:
   fruit: {fileID: 8939031798596272746, guid: 5fd5fe3485651bf4399e6c75fef1651d, type: 3}
   slicedFruit: {fileID: 0}
   type: 4
-  spawnRate: 0.3
+  spawnRate: 3
+  pointValue: 0
