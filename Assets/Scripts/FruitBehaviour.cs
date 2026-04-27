@@ -9,6 +9,7 @@ public class FruitBehaviour : MonoBehaviour
 
     Rigidbody rb;
     public float startForce;
+    [SerializeField] private GameObject explode_VFX;
 
     private void Awake()
     {
@@ -55,6 +56,11 @@ public class FruitBehaviour : MonoBehaviour
                 if (lifeManager != null)
                 {
                     lifeManager.UpdateLives();
+                }
+                if (explode_VFX != null)
+                {
+                    GameObject vfx = Instantiate(explode_VFX, transform.position, Quaternion.identity);
+                    Destroy(vfx, 2f);
                 }
             }
             else

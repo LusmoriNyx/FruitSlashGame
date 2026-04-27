@@ -166,12 +166,24 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4697165716033155199, guid: f82a4f3d55125d94ba577ae852569432, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5203252164023484512, guid: f82a4f3d55125d94ba577ae852569432, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 963194227}
     - target: {fileID: 5203252164023484512, guid: f82a4f3d55125d94ba577ae852569432, type: 3}
       propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6112953783265495639, guid: f82a4f3d55125d94ba577ae852569432, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6834090235626889858, guid: f82a4f3d55125d94ba577ae852569432, type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7935735954228254844, guid: f82a4f3d55125d94ba577ae852569432, type: 3}
