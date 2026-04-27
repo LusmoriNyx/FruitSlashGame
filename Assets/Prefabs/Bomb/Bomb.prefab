@@ -145,3 +145,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FruitBehaviour
   fruit: {fileID: 0}
   startForce: 10
+  explode_VFX: {fileID: 3526561273925738756, guid: 3cb12afa70432ba4bb690ecb5d9e6249, type: 3}
