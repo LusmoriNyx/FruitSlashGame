@@ -204,7 +204,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4697165716033155199, guid: f82a4f3d55125d94ba577ae852569432, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5203252164023484512, guid: f82a4f3d55125d94ba577ae852569432, type: 3}
       propertyPath: m_Camera
@@ -225,6 +225,10 @@ PrefabInstance:
     - target: {fileID: 7001103181220827195, guid: f82a4f3d55125d94ba577ae852569432, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 217
+      objectReference: {fileID: 0}
+    - target: {fileID: 7661488624846948758, guid: f82a4f3d55125d94ba577ae852569432, type: 3}
+      propertyPath: m_Color.a
+      value: 0.9529412
       objectReference: {fileID: 0}
     - target: {fileID: 7839159787714114065, guid: f82a4f3d55125d94ba577ae852569432, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -944,6 +948,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3740700864968973805, guid: f82a4f3d55125d94ba577ae852569432, type: 3}
   m_PrefabInstance: {fileID: 465201976}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1572557824 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4697165716033155199, guid: f82a4f3d55125d94ba577ae852569432, type: 3}
+  m_PrefabInstance: {fileID: 465201976}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1572693716
 GameObject:
   m_ObjectHideFlags: 0
@@ -1130,6 +1139,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6835736329300160998, guid: a98a46d37ec302d4bad26581471a0585, type: 3}
+      propertyPath: gameUI
+      value: 
+      objectReference: {fileID: 1572557824}
     - target: {fileID: 6835736329300160998, guid: a98a46d37ec302d4bad26581471a0585, type: 3}
       propertyPath: startButton
       value: 
