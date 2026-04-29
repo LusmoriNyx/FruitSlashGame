@@ -1,11 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class FruitSpawner : MonoBehaviour
 {
     public static FruitSpawner Instance { get; private set; } // Singleton để dễ dàng truy cập từ các script khác
+    private static readonly WaitForSeconds IdleSpawnWait = new WaitForSeconds(0.1f);
 
     [SerializeField] private List<Fruit> fruits = new List<Fruit>();
     [SerializeField] private Transform[] spawnPoints;
@@ -21,37 +21,60 @@ public class FruitSpawner : MonoBehaviour
     [SerializeField] private float sideForceMultiplier = 1f;
     private float minDelay = 0.1f;
     private float maxDelay = 3f;
-    private float timer = 0f;
+    private float speedRampTimer = 0f;
     private bool isIncSpeedSpawn = true;
 
+    /// <summary>
+    /// Khởi tạo object pool ban đầu và bắt đầu vòng spawn.
+    /// </summary>
     void Start()
     {
         InitializedFunTionSpawnFruits();
         StartSpawnFruits();
     }
+    /// <summary>
+    /// Tăng dần tốc độ spawn theo thời gian để tăng độ khó.
+    /// </summary>
     void Update()
     {
+        if (!isIncSpeedSpawn) return;
+
         if (maxDelay - minDelay <= 0.01f)
         {
             isIncSpeedSpawn = false;
+            return;
         }
-        timer += Time.deltaTime;
-        if (timer >= 5f && isIncSpeedSpawn)
+        speedRampTimer += Time.deltaTime;
+        if (speedRampTimer >= 5f)
         {
+#if UNITY_EDITOR
             Debug.Log("Inc speed spawn");
-            minDelay += 0.2f;
-            maxDelay -= 0.2f;
-            timer = 0f;
+#endif
+            minDelay = Mathf.Min(minDelay + 0.2f, maxDelay - 0.01f);
+            maxDelay = Mathf.Max(maxDelay - 0.2f, minDelay + 0.01f);
+            speedRampTimer -= 5f;
         }
     }
+    /// <summary>
+    /// Khởi chạy coroutine spawn trái cây.
+    /// </summary>
     public void StartSpawnFruits()
     {
         StartCoroutine(SpawnFruits());
     }
+    /// <summary>
+    /// Vòng lặp spawn trái cây liên tục khi game đang chạy.
+    /// </summary>
     IEnumerator SpawnFruits()
     {
         while (true)
         {
+            if (GameManager.Instance == null || !GameManager.Instance.isGameStarted)
+            {
+                yield return IdleSpawnWait;
+                continue;
+            }
+
             float delay = Random.Range(minDelay, maxDelay);
             yield return new WaitForSeconds(delay);
             bool isSideSpawn;
@@ -90,6 +113,9 @@ public class FruitSpawner : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Chọn ngẫu nhiên điểm spawn thường hoặc điểm spawn bên hông.
+    /// </summary>
     private Transform GetSpawnPoint(out bool isSideSpawn)
     {
         bool canUseSide = leftSpawnPoint != null && rightSpawnPoint != null;
@@ -109,6 +135,9 @@ public class FruitSpawner : MonoBehaviour
         return spawnPoints[spawnIndex];
     }
 
+    /// <summary>
+    /// Tính hướng ném từ cạnh vào trung tâm với bias ngang và dọc.
+    /// </summary>
     private Vector3 CalculateSideDirection(Vector3 spawnPosition)
     {
         Vector3 centerPosition = GetCenterPosition(spawnPosition);
@@ -124,6 +153,9 @@ public class FruitSpawner : MonoBehaviour
         return launchDirection.normalized;
     }
 
+    /// <summary>
+    /// Lấy vị trí trung tâm mục tiêu để tính hướng ném trái cây.
+    /// </summary>
     private Vector3 GetCenterPosition(Vector3 spawnPosition)
     {
         if (centerTarget != null)
@@ -140,8 +172,13 @@ public class FruitSpawner : MonoBehaviour
         float depthFromCamera = Mathf.Abs(spawnPosition.z - mainCam.transform.position.z);
         return mainCam.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, depthFromCamera));
     }
+    /// <summary>
+    /// Tạo sẵn một số object trong pool cho từng loại trái cây.
+    /// </summary>
     private void InitializedFunTionSpawnFruits()
     {
+        if (ObjectPoolManager.Instance == null) return;
+
         foreach(var fruit in fruits)
         {
             for(int i = 0; i < 5; i++)
