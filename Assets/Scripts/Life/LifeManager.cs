@@ -62,8 +62,17 @@ public class LifeManager : MonoBehaviour
         if (excellentImg) excellentImg.SetActive(false);
         if (modestImg) modestImg.SetActive(false);
 
-        if (restartButton) restartButton.onClick.AddListener(OnRestartClicked);
-        if (continueButton) continueButton.onClick.AddListener(OnContinueClicked);
+        if (restartButton)
+        {
+            restartButton.onClick.AddListener(OnRestartClicked);
+            AudioManager.Instance.ClickPlaySound(); // Phát âm thanh click khi bấm nút Restart
+        }
+        if (continueButton)
+        {
+            continueButton.onClick.AddListener(OnContinueClicked);
+            AudioManager.Instance.ClickPlaySound(); // Phát âm thanh click khi bấm nút Continue
+        }
+
 
         currentTime = totalTime;
         isTimerRunning = false;

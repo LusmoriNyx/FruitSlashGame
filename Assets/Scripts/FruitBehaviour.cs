@@ -51,6 +51,7 @@ public class FruitBehaviour : MonoBehaviour
 
             if (fruit != null && fruit.Type == FruitsType.Bomb)
             {
+                AudioManager.Instance.ExplosionPlaySound();
                 ObjectPoolManager.Instance.ReturnObjectFruit(fruit, gameObject);
                 LifeManager lifeManager = FindAnyObjectByType<LifeManager>();
                 if (lifeManager != null)
@@ -73,6 +74,7 @@ public class FruitBehaviour : MonoBehaviour
                 slicedFruit.transform.position = transform.position;
                 slicedFruit.transform.rotation = Quaternion.identity;
                 slicedFruit.SetActive(true);
+                AudioManager.Instance.SlashPlaySound();
 
                 StartCoroutine(ReturnSlicedAfterTime(slicedFruit, fruit, 2f));
 
