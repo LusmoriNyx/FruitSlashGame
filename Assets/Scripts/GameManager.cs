@@ -69,6 +69,7 @@ public class GameManager : MonoBehaviour
         // Disable tương tác để tránh bấm nhiều lần liên tiếp
         if (startButtonComponent != null)
             startButtonComponent.interactable = false;
+        AudioManager.Instance.ClickPlaySound(); // Phát âm thanh click khi bấm nút Start
         // Bắt đầu hiệu ứng scale cho nút Start
         isStartSequenceRunning = true;
         StartCoroutine(PlayButtonScaleEffect());

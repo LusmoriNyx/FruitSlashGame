@@ -4,6 +4,12 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioSource SFX_Music;
+
+    [SerializeField] private AudioClip explosion_Sound;
+    [SerializeField] private AudioClip slash_Sound;
+    [SerializeField] private AudioClip click_Sound;
+
     [SerializeField] private GameObject turnOn;
     [SerializeField] private GameObject turnOff;
     private bool isAudioOn = true;
@@ -22,17 +28,30 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void PlaySound(AudioClip clip)
+    public void SlashPlaySound()
     {
-        audioSource.PlayOneShot(clip);
+        Debug.Log("Playing slash sound");
+        audioSource.clip = slash_Sound;
+        audioSource.Play();
     }
-
+    public void ExplosionPlaySound()
+    {
+        Debug.Log("Playing explosion sound");
+        audioSource.PlayOneShot(explosion_Sound);
+    }
+    public void ClickPlaySound()
+    {
+        audioSource.PlayOneShot(click_Sound);
+    }
     public void ToggleAudio()
     {
-        if(isAudioOn)
+        ClickPlaySound();
+        if (isAudioOn)
         {
             isAudioOn = false;
             audioSource.mute = true;
+            SFX_Music.mute = true;
+
             turnOn.SetActive(false);
             turnOff.SetActive(true);
         }
@@ -40,6 +59,8 @@ public class AudioManager : MonoBehaviour
         {
             isAudioOn = true;
             audioSource.mute = false;
+            SFX_Music.mute = false;
+
             turnOn.SetActive(true);
             turnOff.SetActive(false);
         }
