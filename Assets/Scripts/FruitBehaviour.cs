@@ -10,6 +10,8 @@ public class FruitBehaviour : MonoBehaviour
     Rigidbody rb;
     public float startForce;
     [SerializeField] private GameObject explode_VFX;
+    [SerializeField] private AudioClip explode_Sound;
+    [SerializeField] private AudioClip slash;
 
     private void Awake()
     {
@@ -51,6 +53,7 @@ public class FruitBehaviour : MonoBehaviour
 
             if (fruit != null && fruit.Type == FruitsType.Bomb)
             {
+                AudioManager.Instance.PlaySound(explode_Sound);
                 ObjectPoolManager.Instance.ReturnObjectFruit(fruit, gameObject);
                 LifeManager lifeManager = FindAnyObjectByType<LifeManager>();
                 if (lifeManager != null)
@@ -73,6 +76,7 @@ public class FruitBehaviour : MonoBehaviour
                 slicedFruit.transform.position = transform.position;
                 slicedFruit.transform.rotation = Quaternion.identity;
                 slicedFruit.SetActive(true);
+                AudioManager.Instance.PlaySound(slash);
 
                 StartCoroutine(ReturnSlicedAfterTime(slicedFruit, fruit, 2f));
 
