@@ -19,8 +19,10 @@ public class FruitSpawner : MonoBehaviour
     [SerializeField] private float sideHorizontalBias = 2f;
     [SerializeField] private float sideUpwardBias = 1f;
     [SerializeField] private float sideForceMultiplier = 1f;
-    private float minDelay = 0.1f;
-    private float maxDelay = 3f;
+    
+    // Tăng tốc độ spawn item hơn trước - giảm min/max delay so với bản cũ
+    public float minDelay = 0.05f;
+    public float maxDelay = 1.2f;
     private float speedRampTimer = 0f;
     private bool isIncSpeedSpawn = true;
 
@@ -39,20 +41,21 @@ public class FruitSpawner : MonoBehaviour
     {
         if (!isIncSpeedSpawn) return;
 
+        // Cho phép tốc độ spawn tăng nhanh hơn
         if (maxDelay - minDelay <= 0.01f)
         {
             isIncSpeedSpawn = false;
             return;
         }
         speedRampTimer += Time.deltaTime;
-        if (speedRampTimer >= 5f)
+        if (speedRampTimer >= 2.2f)   // Thời gian để tăng tốc độ spawn nhanh hơn bản cũ (từ 5s còn 2.2s)
         {
 #if UNITY_EDITOR
-            Debug.Log("Inc speed spawn");
+            Debug.Log("Inc speed spawn (faster ramp)");
 #endif
-            minDelay = Mathf.Min(minDelay + 0.2f, maxDelay - 0.01f);
-            maxDelay = Mathf.Max(maxDelay - 0.2f, minDelay + 0.01f);
-            speedRampTimer -= 5f;
+            minDelay = Mathf.Min(minDelay + 0.12f, maxDelay - 0.01f); // Tăng step nhỏ hơn (nhưng ramp thường xuyên hơn)
+            maxDelay = Mathf.Max(maxDelay - 0.15f, minDelay + 0.01f);
+            speedRampTimer -= 2.2f;
         }
     }
     /// <summary>
