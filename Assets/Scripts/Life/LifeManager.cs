@@ -40,9 +40,9 @@ public class LifeManager : MonoBehaviour
     private readonly WaitForSeconds waitDelay = new WaitForSeconds(2f);
 
     // Thêm tham chiếu script CameraShake để rung camera khi chém trúng bomb
-    [Header("Camera Effects")]
-   
-    [SerializeField] private CameraShake cameraShake;
+    //[Header("Camera Effects")]
+
+    //[SerializeField] private CameraShake cameraShake; 
 
     /// <summary>
     /// Khởi tạo singleton để các script khác truy cập LifeManager.
@@ -84,8 +84,6 @@ public class LifeManager : MonoBehaviour
         UpdateTimerUI();
 
         // Nếu chưa gán CameraShake trên inspector thì tự động tìm thử
-        if (cameraShake == null)
-            cameraShake = FindObjectOfType<CameraShake>();
     }
 
     /// <summary>
@@ -223,15 +221,6 @@ public class LifeManager : MonoBehaviour
     /// </summary>
     public void OnBombSliced()
     {
-        // Run camera shake effect khi chém bomb
-        if (cameraShake != null)
-        {
-            cameraShake.Shake();
-        }
-        else
-        {
-            Debug.LogWarning("CameraShake chưa được gán! Không thể rung camera khi chém bomb.");
-        }
         // Update mạng như bình thường (mất mạng)
         UpdateLives();
     }
