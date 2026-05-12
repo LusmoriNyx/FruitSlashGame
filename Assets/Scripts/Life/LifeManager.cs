@@ -39,6 +39,11 @@ public class LifeManager : MonoBehaviour
 
     private readonly WaitForSeconds waitDelay = new WaitForSeconds(2f);
 
+    // Thêm tham chiếu script CameraShake để rung camera khi chém trúng bomb
+    [Header("Camera Effects")]
+   
+    [SerializeField] private CameraShake cameraShake;
+
     /// <summary>
     /// Khởi tạo singleton để các script khác truy cập LifeManager.
     /// </summary>
@@ -73,11 +78,14 @@ public class LifeManager : MonoBehaviour
             AudioManager.Instance.ClickPlaySound(); // Phát âm thanh click khi bấm nút Continue
         }
 
-
         currentTime = totalTime;
         isTimerRunning = false;
         isTimeGameOver = false;
         UpdateTimerUI();
+
+        // Nếu chưa gán CameraShake trên inspector thì tự động tìm thử
+        if (cameraShake == null)
+            cameraShake = FindObjectOfType<CameraShake>();
     }
 
     /// <summary>
@@ -197,6 +205,7 @@ public class LifeManager : MonoBehaviour
         int index = lifeCount - 1;
         if (index >= 0 && index < lives.Count && lives[index]) // tránh lỗi out of range/null
             lives[index].SetActive(false);
+           
 
         lifeCount--;
         if (lifeCount == 0)
@@ -207,6 +216,24 @@ public class LifeManager : MonoBehaviour
             ShowGameOverPanel();
             StopTimer();
         }
+    }
+
+    /// <summary>
+    /// Hàm này được gọi khi chém trúng bomb. Thêm hàm public để script khác dùng.
+    /// </summary>
+    public void OnBombSliced()
+    {
+        // Run camera shake effect khi chém bomb
+        if (cameraShake != null)
+        {
+            cameraShake.Shake();
+        }
+        else
+        {
+            Debug.LogWarning("CameraShake chưa được gán! Không thể rung camera khi chém bomb.");
+        }
+        // Update mạng như bình thường (mất mạng)
+        UpdateLives();
     }
 
     /// <summary>
