@@ -532,7 +532,7 @@ PrefabInstance:
     - target: {fileID: 1623700794413327303, guid: f82a4f3d55125d94ba577ae852569432, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: ff6a303041d669f42a6ee67852af134b, type: 3}
+      objectReference: {fileID: 21300000, guid: 1345ef984348f564f8378788f675c718, type: 3}
     - target: {fileID: 1623700794413327303, guid: f82a4f3d55125d94ba577ae852569432, type: 3}
       propertyPath: m_Color.a
       value: 1
@@ -599,7 +599,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5032146410081295790, guid: f82a4f3d55125d94ba577ae852569432, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 2
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5203252164023484512, guid: f82a4f3d55125d94ba577ae852569432, type: 3}
       propertyPath: m_Camera
@@ -623,7 +623,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5875824735803218561, guid: f82a4f3d55125d94ba577ae852569432, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 8.21
+      value: 8.210022
       objectReference: {fileID: 0}
     - target: {fileID: 5915712882397985134, guid: f82a4f3d55125d94ba577ae852569432, type: 3}
       propertyPath: m_SizeDelta.x
@@ -2993,7 +2993,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a002638cddfb90b479f3fde636d54c69, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5952fbafbae54c44da2e4bd55b751ea1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
